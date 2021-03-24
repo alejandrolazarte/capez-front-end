@@ -1,0 +1,46 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+    <mat-form-field>
+        <mat-label>Razon Social</mat-label>
+        <input formControlName="businessName" matInput>
+        <mat-error *ngIf="formControls.businessName.errors?.required">
+            El campo Razon Social es requerido
+        </mat-error>
+        <mat-error *ngIf="formControls.businessName.errors?.minlength">
+            El campo Razon Social debe ser mayor a 3
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input formControlName="email" matInput>
+        <mat-error *ngIf="formControls.email.errors?.required">
+            El campo E-mail es requerido
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>CUIT</mat-label>
+        <input formControlName="taxId" matInput>
+        <mat-error *ngIf="formControls.taxId.errors?.required">
+            El campo CUIT es requerido
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Telefono</mat-label>
+        <input formControlName="phoneNumber" matInput>
+        <mat-error *ngIf="formControls.phoneNumber.errors?.required">
+            El campo Telefono es requerido
+        </mat-error>
+    </mat-form-field>
+
+    <div>
+        <button mat-flat-button color="primary">
+            Guardar
+        </button>
+        <a mat-stroked-button routerLink="/companies">
+            Cancelar
+        </a>
+    </div>
+
+</form>
